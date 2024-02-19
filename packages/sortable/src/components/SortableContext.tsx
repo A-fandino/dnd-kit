@@ -62,7 +62,7 @@ export function SortableContext({
   const items = useMemo<UniqueIdentifier[]>(
     () =>
       userDefinedItems.map((item) =>
-        typeof item === 'object' && 'id' in item ? item.id : item
+        typeof item === 'object' && item !== null && 'id' in item ? item.id : item
       ),
     [userDefinedItems]
   );
